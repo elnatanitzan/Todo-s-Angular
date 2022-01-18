@@ -1,5 +1,5 @@
 <div class="list-item" [class.completed]="itemToDisplay.completed">
-    <div>
+    <div class="details">
         <input type="checkbox" [id]="itemToDisplay.id" (change)="toggleDone()" [checked]="itemToDisplay.completed">
         <label [for]="itemToDisplay.id">{{ itemToDisplay.title }}</label>
     </div>

@@ -1,6 +1,6 @@
 <div>
     <h1>ToDo's App</h1>
-    <h2>ToDo app using Angular EventEmitter, Output & Input</h2>
+    <h3>ToDo app using Angular EventEmitter, Output & Input</h3>
     <add-item [createIdFrom]="idNumber" (taskTitle$)="addNewTask($event)"></add-item>
     <app-todo-list [listToDisplay]="todoList" (deleteThisItem$)="deleteItem($event)"></app-todo-list>
 </div>

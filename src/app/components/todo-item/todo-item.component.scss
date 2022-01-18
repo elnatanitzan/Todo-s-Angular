@@ -7,9 +7,19 @@
         font-weight: bold;
     }
 
+    // .details {
+    //     display: flex;
+    //     justify-content: space-between;
+    //     gap: 10px;
+    // }
+
     label {
+        position: relative;
+        left: 40px;
         &::before {
-            margin: 0 10px 0 0;
+            margin: 0 10px 0 -40px;
+            position: absolute;
+            
         }
     }
 

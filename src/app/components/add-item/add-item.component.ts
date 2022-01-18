@@ -19,14 +19,14 @@ export class AddItemComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      task: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(100)]]
+      task: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(500)]]
     })
     
   }
 
   addTask() {
     this.form.valid ? this.taskTitle$.emit(this.form.value.task) : alert('add task first!');
-    
+    this.form.reset();
   }
   createId(createIdFrom) {
     this.createId$.emit(createIdFrom);

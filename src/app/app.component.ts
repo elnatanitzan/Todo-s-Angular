@@ -22,7 +22,7 @@ export class AppComponent implements OnInit{
 
   subTodos() {  
     this.getTodosFromServer = this.coreService.getTodos().subscribe((data: TodoFromServer[]) => {
-      this.todoList = localStorage.getItem('items') ? [...JSON.parse(localStorage.getItem('items'))]   : [...this.todoList, ...data];
+      this.todoList = localStorage.getItem('items') ? [...JSON.parse(localStorage.getItem('items'))] : [...this.todoList, ...data];
       this.saveToLocaleStorage();
     })
   }
@@ -40,7 +40,6 @@ export class AppComponent implements OnInit{
   }
 
   deleteItem($event) {
-    console.log($event);
     this.idNumber = $event;
     this.todoList = this.todoList.filter((item: TodoFromServer) => item.id !== $event);
     this.saveToLocaleStorage();
