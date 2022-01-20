@@ -6,7 +6,7 @@ export interface TodoItem {
 
 export interface TodoFromServer {
     userId: number;
-    id: number;
+    id: any;
     title: string;
     completed: boolean;
 }

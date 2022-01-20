@@ -1,6 +1,68 @@
-  div {
+.header {
+  display: grid;
+  place-items: center; 
+  padding: 1.5rem 0;
+  box-shadow: 0 15px 20px -5px #cecece;
+  backdrop-filter: blur(3px);
+  
+  h1, h3 {
     max-width: 640px;
-    margin: 0 auto;
+    text-align: center;
+  } 
+}
+
+.header-sticky {
+  backdrop-filter: blur(20px);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  padding: 1rem;
+  transition: position .3s;
+  
+  h3 { display: none; }
+}
+
+.main {
+  max-width: 640px;
+  margin: 0 auto; 
+  position: relative;
+  
+}
+
+$scrollLength: 100vh;
+
+.back-to-top-wrapper {
+  visibility: hidden;
+  position: absolute;
+  top: $scrollLength;
+  right: 7rem;
+  bottom: -5em;
+  cursor: pointer;
+  
+  .back-to-top-link {
+    pointer-events: none;
+    position: fixed;
+    pointer-events: all;
+    top: calc(100vh - 5rem);
+    display: inline-block;
+    text-decoration: none;
+    font-size: .8rem;
+    line-height: 3rem;
+    text-align: center;
+    width: fit-content;
+    background: #3d3d3d;
+    color: #fff;
+    border-radius: 12px;
+    padding: 0 .5rem;
+    box-shadow: 0 7px 5px -4px #616161;
+    transition: transform 80ms ease-in;
     
-    h1, h3 { text-align: center; }
+    &:hover,
+    &:focus {
+      transform: scale(1.05);
+      box-shadow: 0 7px 5px -5px #616161;
+    }
   }
+}
+.visible { visibility: visible; }

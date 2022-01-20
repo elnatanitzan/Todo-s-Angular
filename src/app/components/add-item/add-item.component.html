@@ -1,4 +1,13 @@
-<form (ngSubmit)="addTask()" [formGroup]="form">
+<form (ngSubmit)="addTask()" [formGroup]="form" [ngClass]="{'form' : true, 'sticky' : isSticky}">
+  <div class="input">
     <input type="text" formControlName="task" required="required" placeholder="Type new Task...">
-    <button (click)="createId(createIdFrom)" type="submit">Add Task</button>
-  </form>
+    <button
+      class="btn btn-info"
+      (click)="createId(createIdFrom)"
+      type="submit"
+      [disabled]="!form.valid"
+    >
+      Add Task
+    </button>
+  </div>
+</form>

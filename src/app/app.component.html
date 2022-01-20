@@ -1,6 +1,11 @@
-<div>
+<div [ngClass]="{'header' : true, 'header-sticky' : isSticky}">
     <h1>ToDo's App</h1>
     <h3>ToDo app using Angular EventEmitter, Output & Input</h3>
+</div>
+<div class="main">
     <add-item [createIdFrom]="idNumber" (taskTitle$)="addNewTask($event)"></add-item>
     <app-todo-list [listToDisplay]="todoList" (deleteThisItem$)="deleteItem($event)"></app-todo-list>
+</div>
+<div [ngClass]="{'back-to-top-wrapper' : true, 'back-to-top-wrapper visible' : isSticky}">
+    <a href="#top" class="back-to-top-link" aria-label="Scroll to Top">Back to Top</a>
 </div>

@@ -1,5 +1,8 @@
+$colors: #fbf8ccd2, #fde4cfd2, #ffcfd2d2, #f1c0e8d2, #cfbaf0d2, #a3c4f3d2, #90dbf4d2, #8eecf5d2, #98f5e1d2, #b9fbc0d2;
+$repeat: 10;
+
 ul {
-  margin: 3rem auto;
+  margin: 2rem auto;
   padding: 0;
   overflow: hidden;
   border-radius: 8px;
@@ -7,23 +10,24 @@ ul {
   display: flex;
   flex-direction: column-reverse;
   
-  li {
-    background: hsla(0, 0%, 100%, .8);
-    list-style: none;
-    margin: 0;
-    font-size: 20px;
-    padding: 10px;
-    transition: all .2s ease-in-out;
-    &:nth-child(odd) {
-      background: rgba(221, 221, 221, .8);
-      &:hover { background: rgba(221, 221, 221); }
+  @for $i from 1 through $repeat {
+    li:nth-child(#{length($colors)}n+#{$i}) {
+        background: nth($colors, random(length($colors)));
+      }
     }
     
-    &:hover {
-      background: hsla(0, 0%, 100%);
-      transform: scale(101%);
-      box-shadow: 0 0 40px -10px rgba(0,0,0,.7);
+    li {
+      list-style: none;
+      margin: 0;
+      font-size: 20px;
+      padding: 10px;
+      transition: all .1s ease-in-out;
+      border-bottom: 2px solid rgba(0,0,0,.04);
+      
+      &:hover {
+        transform: scale(101%);
+        box-shadow: 0 0 40px -10px rgba(0,0,0,.7);
+        border: none;
     }
   }
-
 }
